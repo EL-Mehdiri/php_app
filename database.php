@@ -2,14 +2,14 @@
 $db_server  = "localhost";
 $db_user = "root";
 $db_passwd = "";
-$db_name = "businessdb";
+$db_name = "webdev";
 $conn = "";
 
 try {
-    $conn = mysqli_connect($db_server, $db_user, $db_passwd, $db_name);
+    $conn = new mysqli($db_server, $db_user, $db_passwd, $db_name);
 } catch (mysqli_sql_exception) {
-    echo 'Connection failed <br>';
+    die("Connection failed");
 }
 if ($conn) {
-    echo ("Connected to the database successfully! <br>");
+    echo ("Connected successfully! ");
 }
